@@ -1,7 +1,6 @@
 # espsim
 ESP8266 Simulator (Allows Native Code to Link/Run on Linux)
 
-<blockquote>
 Allows native esp8266 code to be be cross-compiled to run native on a host computer (currently linux).
 
 <p>
@@ -15,7 +14,7 @@ I am releasing this because it has proven useful for me and has become integral 
 <li>Porting to other platforms may be a little involved (network.cpp), I will likely do a mac port, not too motivated on cygwin.</li>
 <li>Looking for contributions, with a little work and more testing, this could become useful for a lot more people.</li>
 <ol>
-</blockquote>
+
 
 <h2>The Good</h2>
 
