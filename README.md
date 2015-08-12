@@ -68,41 +68,39 @@ Around line 45, change the following to stop the gpio calls from segfaulting:
 Replace
 
 <p>
-<code>
-<br>#define ETS_UNCACHED_ADDR(addr) (addr)
-<br>#define ETS_CACHED_ADDR(addr) (addr)
-</code>
+<pre>
+#define ETS_UNCACHED_ADDR(addr) (addr)
+#define ETS_CACHED_ADDR(addr) (addr)
+</pre>
 
 <p>with:</p>
 
 <p>
-<code>
 <pre>
-<br>// LINUX
-<br>#ifndef ETS_UNCACHED_ADDR
-<br>#define ETS_UNCACHED_ADDR(addr) (addr)
-<br>#endif
-<br>
-<br>#ifndef ETS_CACHED_ADDR
-<br>#define ETS_CACHED_ADDR(addr) (addr)
-<br>#endif
+// LINUX
+#ifndef ETS_UNCACHED_ADDR
+#define ETS_UNCACHED_ADDR(addr) (addr)
+#endif
+
+#ifndef ETS_CACHED_ADDR
+#define ETS_CACHED_ADDR(addr) (addr)
+#endif
 </pre>
-</code>
 
 <h3>c_types.h</h3>
 
 <p>Replace</p>
 
 <p>
-<code>
+<pre>
 typedef signed long         int32_t;
-</code>
+</pre>
 
 <p>with:</p>
 
 <p>
-<code>
-<br>#ifndef __uint32_t_defined
-<br>typedef signed long         int32_t;
-<br>#endif
-</code>
+<pre>
+#ifndef __uint32_t_defined
+typedef signed long         int32_t;
+#endif
+</pre>
