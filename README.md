@@ -13,7 +13,7 @@ I am releasing this because it has proven useful for me and has become integral 
 <li>If your not that experienced with C/C++, you might want to wait and see if this project matures some before trying to get it to port.</li>
 <li>Porting to other platforms may be a little involved (network.cpp), I will likely do a mac port, not too motivated on cygwin.</li>
 <li>Looking for contributions, with a little work and more testing, this could become useful for a lot more people.</li>
-<ol>
+</ol>
 
 
 <h2>The Good</h2>
@@ -64,17 +64,20 @@ The following headers were changed:
 
 Around line 45, change the following to stop the gpio calls from segfaulting:
 
+<p>
 Replace
 
+<p>
 <code>
-#define ETS_UNCACHED_ADDR(addr) (addr)
-#define ETS_CACHED_ADDR(addr) (addr)
+<br>#define ETS_UNCACHED_ADDR(addr) (addr)
+<br>#define ETS_CACHED_ADDR(addr) (addr)
 </code>
 
 <p>with:</p>
 
+<p>
 <code>
-// LINUX
+<br>// LINUX
 <br>#ifndef ETS_UNCACHED_ADDR
 <br>#define ETS_UNCACHED_ADDR(addr) (addr)
 <br>#endif
@@ -88,12 +91,14 @@ Replace
 
 <p>Replace</p>
 
+<p>
 <code>
 typedef signed long         int32_t;
 </code>
 
 <p>with:</p>
 
+<p>
 <code>
 <br>#ifndef __uint32_t_defined
 <br>typedef signed long         int32_t;
