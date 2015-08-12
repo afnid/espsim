@@ -52,6 +52,8 @@ There are some issues getting this to work, mostly because this needs to be buil
 I run 64-bit Ubuntu/Mint environment system, and has had a lot of packages already installed at this point.
 You could use virtualbox to run a 32-bit environment, or what I did was carefully add i386 libraries until I got it to link.
 Looking through packages installed I see libc6-dev-i386, libc6-i386, g++-4.8-multilib, valgrind-i386 (removes the 64 bit version!).
+
+<p>
 Be careful of anything that wants to replace all of your shared libraries with 32 bit versions.
 
 <p>
@@ -63,9 +65,6 @@ The following headers were changed:
 <h3>eagle_soc.h</h3>
 
 Around line 45, change the following to stop the gpio calls from segfaulting:
-
-<p>
-Replace
 
 <p>
 <pre>
