@@ -77,6 +77,7 @@ Replace
 
 <p>
 <code>
+<pre>
 <br>// LINUX
 <br>#ifndef ETS_UNCACHED_ADDR
 <br>#define ETS_UNCACHED_ADDR(addr) (addr)
@@ -85,6 +86,7 @@ Replace
 <br>#ifndef ETS_CACHED_ADDR
 <br>#define ETS_CACHED_ADDR(addr) (addr)
 <br>#endif
+</pre>
 </code>
 
 <h3>c_types.h</h3>
