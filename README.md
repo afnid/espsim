@@ -64,11 +64,11 @@ The following headers were changed:
 
 Around line 45, change the following to stop the gpio calls from segfaulting:
 
-<p>Replace</p>
+Replace
 
 <code>
 #define ETS_UNCACHED_ADDR(addr) (addr)
-<br>#define ETS_CACHED_ADDR(addr) (addr)
+#define ETS_CACHED_ADDR(addr) (addr)
 </code>
 
 <p>with:</p>
