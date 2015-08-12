@@ -1,5 +1,5 @@
-#ifndef _eth_h_
-#define _eth_h_
+#ifndef _network_h_
+#define _network_h_
 
 bool getmacaddr(unsigned char *mac);
 bool getipinfo(unsigned int *ipaddr, unsigned int *netmask);
