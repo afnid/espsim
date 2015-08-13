@@ -1,10 +1,10 @@
 # espsim
 ESP8266 Simulator (Allows Native Code to Link/Run on Linux)
 
-Allows native esp8266 code to be be cross-compiled to run native on a host computer (currently linux).
+Allows native esp8266 code to be be cross-compiled to run native 32 bit executable on a host computer (currently linux) .. not to be confused with using the xtensa cross-compiler to create a native esp8266 image that can only be run on an esp8266 cpu.
 
 <p>
-I am releasing this because it has proven useful for me and has become integral to my development process.
+I am releasing this because it has proven useful for me and has become integral to my development process because I can run a native Linux executable that will communicate with actual esp8266 processors.
 
 <p>
 <ol>
