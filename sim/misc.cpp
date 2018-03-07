@@ -52,7 +52,7 @@ extern "C" {
 		ptimer->timer_period = ms;
 	}
 
-	void ets_timer_arm_new(volatile ETSTimer *ptimer, uint32 ms, bool repeat_flag, int wtf) {
+	void ets_timer_arm_new(volatile ETSTimer *ptimer, uint32 ms, bool repeat_flag, bool wtf) {
 		debug2(__LINE__);
 		esp8266 *esp = getesp();
 		ptimer->timer_next = esp->timers;
@@ -199,13 +199,12 @@ extern "C" {
 		return 1;
 	}
 
-	void uart_div_modify(uint16 a1, uint32 a2) {
+	void uart_div_modify(uint8 a1, uint32 a2) {
 		debug2(__LINE__);
 	}
 
-	int os_install_putc1(const void *p) {
+	void os_install_putc1(void (*)(char)) {
 		debug2(__LINE__);
-		return 0;
 	}
 
 	unsigned char *ets_uncached_addr(int addr) {

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <strings.h>
 
-#define __uint32_t_defined
+//#define __uint32_t_defined
 
 #define volatile // solved compile issues
 
@@ -27,6 +27,7 @@ extern "C" {
 #include "osapi.h"
 #include "gpio.h"
 
+#ifdef OLDVERISON
 // missing esp8266 prototypes
 uint16 readvdd33(void);
 void ets_delay_us(uint16 us);
@@ -66,6 +67,7 @@ uint32 phy_get_vdd33();
 
 int uart_tx_one_char(char ch);
 int os_install_putc1(const void *p);
+#endif
 
 void user_init();
 void uart_hook(char ch);
@@ -83,6 +85,7 @@ char *strcat(char *dest, const char *src);
 #undef os_printf
 #define os_sprintf sprintf
 #define os_printf printf
+//#define ets_printf printf
 
 #undef os_strcpy
 #undef os_strncpy
@@ -97,6 +100,13 @@ char *strcat(char *dest, const char *src);
 #define os_strstr strstr
 #define os_strlen strlen
 
+#define ets_strcpy strcpy
+#define ets_strncpy strncpy
+#define ets_strncmp strncmp
+#define ets_strcmp strcmp
+#define ets_strstr strstr
+#define ets_strlen strlen
+
 #undef os_bzero
 #undef os_memcmp
 #undef os_memset
@@ -107,6 +117,12 @@ char *strcat(char *dest, const char *src);
 #define os_memset memset
 #define os_memcpy memcpy
 #define os_memmove memmove
+
+#define ets_bzero bzero
+#define ets_memcmp memcmp
+#define ets_memset memset
+#define ets_memcpy memcpy
+#define ets_memmove memmove
 
 #undef os_zalloc
 #undef os_malloc

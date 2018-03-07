@@ -80,8 +80,9 @@ extern "C" {
 		return true;
 	}
 
-	void system_deep_sleep(uint32 time_in_us) {
+	bool system_deep_sleep(uint64 time_in_us) {
 		debug2(__LINE__);
+		return true;
 	}
 
 	uint32 system_rtc_clock_cali_proc(void) {

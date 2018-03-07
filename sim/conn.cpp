@@ -435,6 +435,14 @@ extern "C" {
 		return queueBuffer(s, psent, length);
 	}
 
+	sint8 espconn_send(struct espconn *conn, uint8 *psent, uint16 length) {
+		return espconn_sent(conn, psent, length);
+	}
+
+	sint8 espconn_secure_send(struct espconn *conn, uint8 *psent, uint16 length) {
+		return espconn_sent(conn, psent, length);
+	}
+
 	sint8 espconn_connect(struct espconn *conn) {
 		MySocket *s = findSocket(conn);
 		socketdebug2(s);
@@ -612,7 +620,7 @@ extern "C" {
 		return 0;
 	}
 
-	bool espconn_secure_ca_enable(uint8 level, uint8 flash_sector) {
+	bool espconn_secure_ca_enable(uint8 level, uint32 flash_sector) {
 		debug1(__LINE__);
 		return 0;
 	}
@@ -686,7 +694,7 @@ extern "C" {
 		debug1(__LINE__);
 	}
 
-	void espconn_dns_setserver(char numdns, ip_addr_t *dnsserver) {
+	void espconn_dns_setserver(uint8 numdns, ip_addr_t *dnsserver) {
 		debug1(__LINE__);
 	}
 }

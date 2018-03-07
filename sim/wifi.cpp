@@ -17,6 +17,20 @@ extern "C" {
 		return false;
 	}
 
+	bool wifi_softap_set_config(struct softap_config *config) {
+		debug2(__LINE__);
+		esp8266 *esp = getesp();
+		os_memcpy(&esp->softap, config, sizeof(struct softap_config));
+		return false;
+	}
+
+	bool wifi_softap_get_config_default(struct softap_config *config) {
+		debug2(__LINE__);
+		esp8266 *esp = getesp();
+		os_memcpy(config, &esp->softap, sizeof(struct softap_config));
+		return 0;
+	}
+
 	sint8 wifi_station_get_rssi() {
 		debug2(__LINE__);
 		return 0;
@@ -164,6 +178,11 @@ extern "C" {
 	}
 
 	bool wifi_station_connect() {
+		debug2(__LINE__);
+		return 0;
+	}
+
+	bool wifi_station_disconnect() {
 		debug2(__LINE__);
 		return 0;
 	}

@@ -6,6 +6,7 @@
 #include <getopt.h>
 #include <fcntl.h>
 
+char flashchip;
 uint8 UartDev[1024 * 8];
 
 esp8266 *getesp() {
